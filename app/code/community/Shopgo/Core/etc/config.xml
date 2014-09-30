@@ -1,0 +1,15 @@
+<?xml version="1.0"?>
+<config>
+    <modules>
+        <Shopgo_Core>
+            <version>1.0.0</version>
+        </Shopgo_Core>
+    </modules>
+    <global>
+        <helpers>
+            <shopgo_core>
+                <class>Shopgo_Core_Helper</class>
+            </shopgo_core>
+        </helpers>
+    </global>
+</config>
