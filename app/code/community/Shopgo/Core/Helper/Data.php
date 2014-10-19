@@ -2,8 +2,8 @@
 
 class Shopgo_Core_Helper_Data extends Mage_Core_Helper_Abstract
 {
-    protected $_shopgoLogFile = 'shopgo.log';
-    protected $_shopgoEmailFailMessage = 'Could not send email';
+    protected $_logFile = 'shopgo.log';
+    protected $_emailFailMessage = 'Could not send email';
 
     public function sendEmail($to, $templateId, $params = array(), $sender = 'general', $name = null, $storeId = null)
     {
@@ -29,7 +29,7 @@ class Shopgo_Core_Helper_Data extends Mage_Core_Helper_Abstract
         );
 
         if (!$mailTemplate->getSentSuccess()) {
-            $this->log($this->_shopgoEmailFailMessage);
+            $this->log($this->_emailFailMessage);
             $result = false;
         }
 
@@ -79,7 +79,7 @@ class Shopgo_Core_Helper_Data extends Mage_Core_Helper_Abstract
         }
 
         if (empty($file)) {
-            $file = $this->_shopgoLogFile;
+            $file = $this->_logFile;
         }
 
         switch ($type) {
