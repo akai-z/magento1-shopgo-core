@@ -1,6 +1,6 @@
 <?php
 
-class Shopgo_Core_Helper_Data extends Mage_Core_Helper_Abstract
+class Shopgo_Core_Helper_Abstract extends Mage_Core_Helper_Abstract
 {
     protected $_logFile = 'shopgo.log';
     protected $_emailFailMessage = 'Could not send email';
