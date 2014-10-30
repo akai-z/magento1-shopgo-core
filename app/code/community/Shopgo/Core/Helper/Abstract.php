@@ -74,7 +74,8 @@ class Shopgo_Core_Helper_Abstract extends Mage_Core_Helper_Abstract
 
     public function log($logs, $type = 'system', $file = '')
     {
-        if (empty($logs)) {
+        if (!Mage::getStoreConfig('dev/log/active')
+            || empty($logs)) {
             return;
         }
 
