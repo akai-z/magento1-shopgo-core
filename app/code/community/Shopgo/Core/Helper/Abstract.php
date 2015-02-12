@@ -1,10 +1,55 @@
 <?php
+/**
+ * ShopGo
+ *
+ * NOTICE OF LICENSE
+ *
+ * This source file is subject to the GNU Public License (GPLv2)
+ * that is bundled with this package in the file COPYING.
+ * It is also available through the world-wide-web at this URL:
+ * http://www.gnu.org/licenses/gpl-2.0.html
+ *
+ * @category    Shopgo
+ * @package     Shopgo_Core
+ * @copyright   Copyright (c) 2014 Shopgo. (http://www.shopgo.me)
+ * @license     http://www.gnu.org/licenses/gpl-2.0.html  GNU Public License (GPLv2)
+ */
 
-class Shopgo_Core_Helper_Abstract extends Mage_Core_Helper_Abstract
+
+/**
+ * Abstract helper class
+ *
+ * @category    Shopgo
+ * @package     Shopgo_Core
+ * @author      Ammar <ammar@shopgo.me>
+ */
+abstract Shopgo_Core_Helper_Abstract extends Mage_Core_Helper_Abstract
 {
+    /**
+     * Log file name
+     *
+     * @var string
+     */
     protected $_logFile = 'shopgo.log';
+
+    /**
+     * Email fail message
+     *
+     * @var string
+     */
     protected $_emailFailMessage = 'Could not send email';
 
+    /**
+     * Send email
+     *
+     * @param string $to
+     * @param integer|string $templateId
+     * @param array $params
+     * @param string|array $sender
+     * @param string $name
+     * @param integer|null $storeId
+     * @return boolean
+     */
     public function sendEmail($to, $templateId, $params = array(), $sender = 'general', $name = null, $storeId = null)
     {
         $mailTemplate = Mage::getModel('core/email_template');
@@ -38,6 +83,14 @@ class Shopgo_Core_Helper_Abstract extends Mage_Core_Helper_Abstract
         return $result;
     }
 
+    /**
+     * Set user messages
+     *
+     * @param string|array $message
+     * @param string $type
+     * @param string $sessionPath
+     * @return boolean
+     */
     public function userMessage($message, $type, $sessionPath = 'core/session')
     {
         try {
@@ -72,6 +125,14 @@ class Shopgo_Core_Helper_Abstract extends Mage_Core_Helper_Abstract
         return true;
     }
 
+    /**
+     * Generate log
+     *
+     * @param string|array $logs
+     * @param string $type
+     * @param string $file
+     * @return boolean
+     */
     public function log($logs, $type = 'system', $file = '')
     {
         if (!Mage::getStoreConfig('dev/log/active')
@@ -102,6 +163,12 @@ class Shopgo_Core_Helper_Abstract extends Mage_Core_Helper_Abstract
         }
     }
 
+    /**
+     * Generate system log
+     *
+     * @param string|array $logs
+     * @param string $file
+     */
     private function _systemLog($logs, $file)
     {
         if (gettype($logs) == 'string') {
