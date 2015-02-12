@@ -1,0 +1,15 @@
+{
+    "name": "shopgo/Shopgo_Core",
+    "type": "magento-module",
+    "license": "GPLv2",
+    "description": "Contains functions commonly used in Shopgo extenions",
+    "require": {
+        "magento-hackathon/magento-composer-installer": "*"
+    },
+    "authors":[
+        {
+            "name": "Ammar@Shopgo",
+            "email": "ammar@shopgo.me"
+        }
+    ]
+}
