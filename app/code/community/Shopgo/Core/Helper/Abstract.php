@@ -4,7 +4,7 @@
  *
  * NOTICE OF LICENSE
  *
- * This source file is subject to the GNU Public License (GPLv2)
+ * This source file is subject to the GNU General Public License (GPLv2)
  * that is bundled with this package in the file COPYING.
  * It is also available through the world-wide-web at this URL:
  * http://www.gnu.org/licenses/gpl-2.0.html
