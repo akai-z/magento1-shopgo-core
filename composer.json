@@ -2,7 +2,7 @@
     "name": "shopgo/Shopgo_Core",
     "type": "magento-module",
     "license": "GPLv2",
-    "description": "Contains functions commonly used in Shopgo extenions",
+    "description": "Contains functions commonly used in Shopgo extensions",
     "require": {
         "magento-hackathon/magento-composer-installer": "*"
     },
