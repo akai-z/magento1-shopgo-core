@@ -9,4 +9,4 @@ This README would normally document whatever steps are necessary to get your app
 
 ### Who do I talk to? ###
 
-ammar@shopgo.me
+[Ammar@Shopgo](ammar@shopgo.me)
