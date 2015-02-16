@@ -23,7 +23,7 @@
  * @package     Shopgo_Core
  * @author      Ammar <ammar@shopgo.me>
  */
-abstract Shopgo_Core_Helper_Abstract extends Mage_Core_Helper_Abstract
+class Shopgo_Core_Helper_Abstract extends Mage_Core_Helper_Abstract
 {
     /**
      * Log file name
