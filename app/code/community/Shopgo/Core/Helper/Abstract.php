@@ -180,9 +180,7 @@ class Shopgo_Core_Helper_Abstract extends Mage_Core_Helper_Abstract
                 continue;
             }
 
-            $message = gettype($log['message']) == 'array'
-                ? print_r($log['message'], true)
-                : $log['message'];
+            $message = $log['message'];
 
             $level = isset($log['level'])
                 ? $log['level'] : null;
