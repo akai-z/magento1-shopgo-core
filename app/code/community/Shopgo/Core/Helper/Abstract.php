@@ -12,7 +12,7 @@
  * @category    Shopgo
  * @package     Shopgo_Core
  * @copyright   Copyright (c) 2014 Shopgo. (http://www.shopgo.me)
- * @license     http://www.gnu.org/licenses/gpl-2.0.html  GNU Public License (GPLv2)
+ * @license     http://www.gnu.org/licenses/gpl-2.0.html  GNU General Public License (GPLv2)
  */
 
 
