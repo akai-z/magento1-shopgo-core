@@ -3,7 +3,7 @@
 ### About Repository ###
 
 * Contains functions commonly used in Shopgo Magento extensions.
-* v1.0.3
+* v1.0.4
 
 ### Author ###
 
