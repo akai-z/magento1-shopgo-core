@@ -43,12 +43,12 @@ abstract class Shopgo_Core_Helper_Abstract extends Mage_Core_Helper_Abstract
      * Send email
      *
      * @param string $to
-     * @param integer|string $templateId
+     * @param int|string $templateId
      * @param array $params
      * @param string|array $sender
      * @param string $name
-     * @param integer|null $storeId
-     * @return boolean
+     * @param int|null $storeId
+     * @return bool
      */
     public function sendEmail($to, $templateId, $params = array(), $sender = 'general', $name = null, $storeId = null)
     {
@@ -89,7 +89,7 @@ abstract class Shopgo_Core_Helper_Abstract extends Mage_Core_Helper_Abstract
      * @param string|array $message
      * @param string $type
      * @param string $sessionPath
-     * @return boolean
+     * @return bool
      */
     public function userMessage($message, $type, $sessionPath = 'core/session')
     {
@@ -131,7 +131,7 @@ abstract class Shopgo_Core_Helper_Abstract extends Mage_Core_Helper_Abstract
      * @param string|array $logs
      * @param string $type
      * @param string $file
-     * @return boolean
+     * @return bool
      */
     public function log($logs, $type = 'system', $file = '')
     {
@@ -168,6 +168,7 @@ abstract class Shopgo_Core_Helper_Abstract extends Mage_Core_Helper_Abstract
      *
      * @param string|array $logs
      * @param string $file
+     * @return null
      */
     private function _systemLog($logs, $file)
     {
@@ -198,5 +199,15 @@ abstract class Shopgo_Core_Helper_Abstract extends Mage_Core_Helper_Abstract
 
             Mage::log($message, $level, $file, $forceLog);
         }
+    }
+
+    /**
+     * Check whether Advanced Ifconfig module is enabled or not
+     *
+     * @return bool
+     */
+    public function isAdvIfconfigEnabled()
+    {
+        return Mage::helper('core')->isModuleEnabled('Shopgo_AdvIfconfig');
     }
 }
