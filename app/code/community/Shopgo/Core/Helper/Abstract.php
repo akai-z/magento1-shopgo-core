@@ -146,7 +146,7 @@ abstract class Shopgo_Core_Helper_Abstract extends Mage_Core_Helper_Abstract
 
         switch ($type) {
             case 'exception':
-                if (gettype($logs) != 'array') {
+                if (!is_array($logs)) {
                     $logs = array($logs);
                 }
 
@@ -172,7 +172,7 @@ abstract class Shopgo_Core_Helper_Abstract extends Mage_Core_Helper_Abstract
      */
     private function _systemLog($logs, $file)
     {
-        if (gettype($logs) == 'string') {
+        if (is_string($logs)) {
             $logs = array(array('message' => $logs));
         }
 
