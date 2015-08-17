@@ -176,6 +176,10 @@ abstract class Shopgo_Core_Helper_Abstract extends Mage_Core_Helper_Abstract
             $logs = array(array('message' => $logs));
         }
 
+        if (is_array($logs) && isset($logs['message'])) {
+            $logs = array($logs);
+        }
+
         foreach ($logs as $log) {
             if (!isset($log['message'])) {
                 continue;
