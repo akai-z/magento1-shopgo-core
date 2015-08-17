@@ -131,9 +131,10 @@ abstract class Shopgo_Core_Helper_Abstract extends Mage_Core_Helper_Abstract
      * @param string|array $logs
      * @param string $type
      * @param string $file
+     * @param bool $line
      * @return bool
      */
-    public function log($logs, $type = 'system', $file = '')
+    public function log($logs, $type = 'system', $file = '', $line = false)
     {
         if (!Mage::getStoreConfig('dev/log/active')
             || empty($logs)) {
@@ -159,7 +160,7 @@ abstract class Shopgo_Core_Helper_Abstract extends Mage_Core_Helper_Abstract
                 }
                 break;
             default:
-                $this->_systemLog($logs, $file);
+                $this->_systemLog($logs, $file, $line);
         }
     }
 
@@ -168,9 +169,10 @@ abstract class Shopgo_Core_Helper_Abstract extends Mage_Core_Helper_Abstract
      *
      * @param string|array $logs
      * @param string $file
+     * @param bool $line
      * @return null
      */
-    private function _systemLog($logs, $file)
+    private function _systemLog($logs, $file, $line = false)
     {
         if (is_string($logs)) {
             $logs = array(array('message' => $logs));
@@ -186,6 +188,14 @@ abstract class Shopgo_Core_Helper_Abstract extends Mage_Core_Helper_Abstract
             }
 
             $message = $log['message'];
+
+            if ($line) {
+                if (isset($log['line']) && !$log['line']) {
+                    // Do nothing
+                } else {
+                    $message .= sprintf(' [Line %s]', __LINE__);
+                }
+            }
 
             $level = isset($log['level'])
                 ? $log['level'] : null;
