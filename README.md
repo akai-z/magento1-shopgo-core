@@ -1,4 +1,4 @@
-# ShopGo Core #
+# ShopGo Core `[UNMAINTAINED]` #
 
 ### About Repository ###
 
